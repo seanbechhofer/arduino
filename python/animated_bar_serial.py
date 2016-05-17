@@ -24,7 +24,7 @@ def animated_barplot():
             val = 0
         data.append(val)
     plt.xlim(-1,len(data)+1)
-    plt.ylim(0, 1024)
+    plt.ylim(0, 400)
     rects = plt.bar(range(len(data)), data,  align = 'center', color= 'b', alpha=0.4)
     fig.canvas.draw()
     
@@ -37,7 +37,7 @@ def animated_barplot():
             except Exception, e:
                 val = 0
             data.append(val)
-        print ("tick")
+        #print ("tick")
         for rect, value in zip(rects,data):
             rect.set_height(int(value))
         fig.canvas.draw()
